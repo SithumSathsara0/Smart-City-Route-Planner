@@ -13,16 +13,3 @@ api = tweepy.API(auth)
 # Text and optional image
 text = "Hello, world! 🌍 #MyFirstPost"
 image_path = "path/to/image.jpg"  # Optional
-
-# Create the post
-try:
-    # If posting with image
-    media = api.media_upload(image_path)
-    tweet = api.update_status(status=text, media_ids=[media.media_id])
-    
-    # If text only
-    # tweet = api.update_status(status=text)
-    
-    print("✅ Post created successfully:", tweet.id)
-except Exception as e:
-    print("❌ Error creating post:", e)
